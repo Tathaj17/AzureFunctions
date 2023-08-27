@@ -1,16 +1,18 @@
 package com.example;
 
-import com.example.model.Greeting;
-import com.example.model.User;
-import org.springframework.stereotype.Component;
-import reactor.core.publisher.Mono;
-
 import java.util.function.Function;
 
-@Component
-public class Hello implements Function<Mono<User>, Mono<Greeting>> {
+import org.springframework.stereotype.Component;
 
-    public Mono<Greeting> apply(Mono<User> mono) {
-        return mono.map(user -> new Greeting("Hello, " + user.getName() + "!\n"));
+import com.example.model.Greeting;
+import com.example.model.TokenDetail;
+
+import reactor.core.publisher.Mono;
+
+@Component
+public class Hello implements Function<Mono<TokenDetail>, Mono<Greeting>> {
+
+    public Mono<Greeting> apply(Mono<TokenDetail> mono) {
+        return mono.map(token -> new Greeting("Token Hearder \n" + token.getHeader() + "Token Payload \n"+ token.getPayload()));
     }
 }

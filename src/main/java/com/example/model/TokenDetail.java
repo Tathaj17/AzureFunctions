@@ -2,15 +2,17 @@ package com.example.model;
 
 public class TokenDetail {
 
-    private String token;
-    private String header;
+    public String token;
+    public String header;
+    public TokenDetail() {
+    }
+   
     public TokenDetail(String token, String header, String payload) {
-		super();
 		this.token = token;
 		this.header = header;
 		this.payload = payload;
 	}
-
+    
 	public String getHeader() {
 		return header;
 	}
@@ -29,8 +31,7 @@ public class TokenDetail {
 
 	private String payload;
 
-    public TokenDetail() {
-    }
+    
 
     public TokenDetail(String token) {
         this.token = token;
