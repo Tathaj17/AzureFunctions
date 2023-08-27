@@ -17,9 +17,9 @@ import com.microsoft.azure.functions.annotation.FunctionName;
 import com.microsoft.azure.functions.annotation.HttpTrigger;
 
 
-public class HelloHandler extends FunctionInvoker<TokenDetail, Greeting> {
+public class TokenHandler extends FunctionInvoker<TokenDetail, Greeting> {
     
-    @FunctionName("gettokendetails")
+    @FunctionName("token")
     public HttpResponseMessage execute(
             @HttpTrigger(name = "request", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<TokenDetail>> request,
             ExecutionContext context) {
@@ -28,7 +28,7 @@ public class HelloHandler extends FunctionInvoker<TokenDetail, Greeting> {
                 .orElseGet(() -> new TokenDetail(
                         request.getQueryParameters()
                                 .getOrDefault("token", "empty")));
-    	    context.getLogger().info("Token->>> " + tokendetail.getToken());
+    	    context.getLogger().info("Token- >>> " + tokendetail.getToken());
     	    String[] parts = tokendetail.getToken().split("\\.");
 	        String header = parts[0];
 	        String payload = parts[1];
