@@ -2,36 +2,18 @@ package com.example.model;
 
 public class TokenDetail {
 
-    public String token;
-    public String header;
+	private String token;
+    private Header header;
+	private Payload payload;
+	
     public TokenDetail() {
     }
    
-    public TokenDetail(String token, String header, String payload) {
+    public TokenDetail(String token, Header header, Payload payload) {
 		this.token = token;
 		this.header = header;
 		this.payload = payload;
 	}
-    
-	public String getHeader() {
-		return header;
-	}
-
-	public void setHeader(String header) {
-		this.header = header;
-	}
-
-	public String getPayload() {
-		return payload;
-	}
-
-	public void setPayload(String payload) {
-		this.payload = payload;
-	}
-
-	private String payload;
-
-    
 
     public TokenDetail(String token) {
         this.token = token;
@@ -44,4 +26,22 @@ public class TokenDetail {
     public void setToken(String token) {
         this.token = token;
     }
+
+	public Header getHeader() {
+		return header;
+	}
+
+	public void setHeader(Header header) {
+		this.header = header;
+	}
+
+	public Payload getPayload() {
+		return payload;
+	}
+
+	public void setPayload(Payload payload) {
+		this.payload = payload;
+	}
+    
+    
 }

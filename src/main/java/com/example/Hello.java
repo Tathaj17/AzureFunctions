@@ -13,6 +13,6 @@ import reactor.core.publisher.Mono;
 public class Hello implements Function<Mono<TokenDetail>, Mono<Greeting>> {
 
     public Mono<Greeting> apply(Mono<TokenDetail> mono) {
-        return mono.map(token -> new Greeting("Token Hearder \n" + token.getHeader() + "Token Payload \n"+ token.getPayload()));
+        return mono.map(token -> new Greeting(token));
     }
 }

@@ -2,20 +2,22 @@ package com.example.model;
 
 public class Greeting {
 
-    private String message;
+
+	private TokenDetail message;
 
     public Greeting() {
     }
 
-    public Greeting(String message) {
+    public Greeting(TokenDetail message) {
         this.message = message;
     }
 
-    public String getMessage() {
+    public TokenDetail getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
+    public void setMessage(TokenDetail message) {
         this.message = message;
     }
+    
 }
